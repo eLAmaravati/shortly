@@ -136,7 +136,7 @@ p {
 
 /* ----- Header ----- */
 .header {
-    background-image: linear-gradient(to bottom, #fff 87%, $ligthGray 10%);
+    // background-image: linear-gradient(to bottom, #fff 87%, $ligthGray 10%);
 
     &__heading {
         display: flex;
@@ -161,12 +161,30 @@ p {
         background-size: cover;
         padding: 50px;
         border-radius: 12px;
+        // position: relative;
     }
 
     &__input {
         font-size: 18px;
     }
 }
+
+#form-result {
+    position: relative;
+
+    .link {
+        &__original {
+            color: $darkBlue;
+        }
+
+        &__short {
+            color: $cyan;
+        }
+    }
+
+}
+
+
 
 /* ----- Section ----- */
 .section {
@@ -177,6 +195,10 @@ p {
 
     &__description {
         text-align: center;
+    }
+
+    &__form {
+        background-image: linear-gradient(to bottom, #fff 50%, $ligthGray 50%);
     }
 
     // Section Stats

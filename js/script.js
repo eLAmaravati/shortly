@@ -27,42 +27,58 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
 // shrtcode API
-// function changeFormAction(event) {
-//     var item = document.getElementById("item").value;
-//     var form = this;
-//     form.action = "https://example.com/api/api?item=" + item + "&auth=AUTHENTICATIONtoken";
-    
-//     // for demonstration, don't actually submit the form, just print out the form action
-//     console.log(form.action);
-//     event.preventDefault();
-//   }
-
-// $('#form-shortly').on('submit', function () {
-//     const input = $('#urlInput').val();
-//     const form = this,
-//         action = '';
-// })  
-
-
-
-
 $('#urlSubmit').on('click', function () {
 
     $.ajax({
         url: 'https://api.shrtco.de/v2/shorten',
-        type: 'post',
+        type: 'get',
         dataType: 'json',
         data: {
             'url': $('#urlInput').val(),
         },
 
-        success: function (result) {
-            if (result.ok == true) {
-                console.log(result);
+        success: function (hasil) {
+            if (hasil.ok == true) {
+                let shortlink = hasil.result;
+                
+                // $.each(shortlink, function (i, data) {
+                //     $('#form-result').append(`
+                //     <p>`+ data.original_link +`</p>
+                //     <p>`+ data.short_link +`</p>
+                //     <button>Copy</button>
+                //     `)
+                // });
+
+                // $(shortlink, function (data) {
+                //     $('#form-result').html(
+                //         `
+                //         <p>`+ data.original_link +`</p>
+                //         <p>`+ data.short_link +`</p>
+                //         <button>Copy</button>
+                //         `
+                //     )
+                // });
+// End loop
+                
+                // console.log(shortlink);
+
+                $('.form__wrapper').after(`
+                <div class="columns mt-6 box" id="form-result">
+                <div class="column is-8">
+                <p class="link__original">`+ shortlink.original_link +`</p>
+                </div>
+                <div class="column is-2">
+                <p class="link__short">`+ shortlink.short_link +`</p>
+                </div>
+                <div class="column is-2">
+                <a class="button button-signup" role="button">Copy</a>
+                </div>
+                </div>
+                `)
             }
             else {
-                
-                $('#form-result').html('<p>No URL specified ("url" parameter is empty)</p>')
+
+                alert('url salah');
             }
         }
         // End Success

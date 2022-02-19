@@ -106,9 +106,6 @@ p {
 }
 
 /* ----- Header ----- */
-.header {
-  background-image: linear-gradient(to bottom, #fff 87%, #EFF1F7 10%);
-}
 .header__heading {
   display: flex;
   flex-flow: column wrap;
@@ -132,6 +129,16 @@ p {
   font-size: 18px;
 }
 
+#form-result {
+  position: relative;
+}
+#form-result .link__original {
+  color: #35323e;
+}
+#form-result .link__short {
+  color: #2acfcf;
+}
+
 /* ----- Section ----- */
 .section__title {
   font-size: 2.5rem;
@@ -139,6 +146,9 @@ p {
 }
 .section__description {
   text-align: center;
+}
+.section__form {
+  background-image: linear-gradient(to bottom, #fff 50%, #EFF1F7 50%);
 }
 .section__stats {
   background-color: #EFF1F7;
