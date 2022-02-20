@@ -14,9 +14,6 @@ This is a solution to the [Shortly URL shortening API Challenge challenge on Fro
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -33,20 +30,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![](./images/desktop-preview.jpg)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github Repository](https://github.com/eLAmaravati/shortly)
+- Live Site URL: [https://elamaravati.github.io/shortly/](https://elamaravati.github.io/shortly/)
 
 ## My process
 
@@ -63,56 +52,67 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+Beberapa catatan ketika mengerjakan _challenge_ ini:
 
-To see how you can add code snippets, see below:
+**JavaScript & jQuery**
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+_Challenge_ ini memang sengaja saya ikuti untuk mengasah pemahaman saya tentang JavaScript dan jQuery sebelum belajar JavaScript framework.
 
-```css
-.proud-of-this-css {
-  color: papayawhip;
+**API**
+
+Ah, susah _geuningan nya_ bikin web dari _public_ API _teh_.
+
+**SaSS**
+
+Tadinya, saya menggunakan CSS framework agar tak harus ngoding CSS terlalu banyak. Tapi, tahu-tahu sudah 500 baris lebih hanya untuk 1 _landing page_. SaSS membuat proses ngoding CSS jadi lebih mudah karena saya bisa membagi CSS ke dalam beberapa _file_.
+
+**Metodologi BEM**
+
+_Challenge_ ini juga sarana berlatih metode BEM. Meski masih sering bingung dalam menamai _class_, tapi dengan metode ini, jadi terasa lebih efektif ketika ngoding di SaSS. Seperti ini:
+
+```.section {
+    &__title {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    &__description {
+        text-align: center;
+    }
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
-```
+**Bulma - CSS Framework**
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+Jika dibandingkan Bootstrap, Bulma lebih ringan dan tidak terlalu banyak "ikut campur". Sayangnya _framework_ yang satu ini punya banyak kelemahan di _source code_ yang dijadikan contoh. Misal:
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+- Elemen `<a>` tanpa atribut `href`.
+- Elemen `img` tanpa atribut `alt`.
+
+Jadi, jika _developer_-nya tidak cukup jeli dan main copas saja, akan banyak sekali elemen HTML yang tidak valid. Untuk _layout_, saya cukup puas dengan Bulma.
+
+Oh, satu lagi catatan: Bulma punya _class_ di level DOM seperti `section`, `footer`, dan `button`. Ini akan cukup menyulitkan jika kita menggunakan metodologi BEM untuk _class name_.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+Untuk web yang mengambil data dari public API, sepertinya akan "seru" kalau menggabungkan dua metode antara cURL dan jQuery karena beberapa alasan:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- Untuk mengakses data dari dan ke API, PHP lebih aman karena _script_-nya tidak bisa dilihat oleh _user_. Setahu saya begitu.
+- PHP juga lebih mudah "membaur" dengan HTML.
+- JavaScript dan/atau jQuery diperlukan untuk elemen-elemen yang tidak bisa di-_handle_ oleh PHP.
+
+Hmmm ... _what if_ web ini dibuat versi PHP-nya?
 
 ### Useful resources
 
 Beberapa sumber yang sangat membantu dalam mengerjakan _challenge_ ini.
 
-- [PENGKONDISIAN : SWITCH pada JAVASCRIPT](https://www.youtube.com/watch?v=8Srl-qk5VvM)
-- [REST API #5 APA ITU PUBLIC API ?](https://www.youtube.com/watch?v=TvOFqREy7A8&list=PLFIM0718LjIW7AsIbnhFg15t9yx4H-sQ0&index=5)
+- [Pengkodisian Switch pada Javascript - WPU](https://www.youtube.com/watch?v=8Srl-qk5VvM)
+- [Rest API #5 Apa Itu Public API? - WPU](https://www.youtube.com/watch?v=TvOFqREy7A8&list=PLFIM0718LjIW7AsIbnhFg15t9yx4H-sQ0&index=5)
 - [CSS Linear Gradient - Mozilla](<https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient()>)
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Website - [Langit Amaravati](https://www.langitamaravati.com)
+- Frontend Mentor - [@eLAmaravati](https://www.frontendmentor.io/profile/elamaravati)
+- Twitter - [Langit Amaravati](https://www.twitter.com/eLAmaravati)

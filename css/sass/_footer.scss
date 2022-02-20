@@ -1,0 +1,68 @@
+/* ----- Footer ----- */
+.footer {
+    position: relative;
+    background-color: $veryDarkViolet;
+    padding: 6rem 6rem 3rem 6rem;
+
+    a {
+        color: $gray;
+
+        &:hover {
+            color: $cyan;
+        }
+    }
+}
+
+.footer-widget {
+    &__title {
+        color: #fff;
+    }
+
+    li {
+        line-height: 2.5rem;
+        font-size: 16px;
+    }
+
+    // Social
+    &__social {
+        display: flex;
+
+        li {
+            padding-right: 1.5em;
+
+            a {
+                color: #fff;
+            }
+        }
+    }
+
+}
+
+// Atribution
+.attribution {
+    font-size: 14px;
+    text-align: center;
+
+    a {
+        color: #fff;
+    }
+}
+
+// To top button
+.to-top {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 3rem;
+
+    a {
+        color: #fff;
+        background-color: hsla(258, 7%, 63%, 0.5);
+        padding: 20px 15px;
+        opacity: 0.7;
+        border-radius: 3px;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

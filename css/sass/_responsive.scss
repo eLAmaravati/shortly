@@ -1,0 +1,176 @@
+/* ------------------------------ 
+Responsive 
+------------------------------- */
+// Mobile and Tablet
+
+@media screen and (max-width: 768px) {
+
+    // Button 
+    .button {
+        display: flex;
+    }
+
+    .button-text {
+        background-color: transparent;
+        color: #fff;
+        margin-bottom: 20px;
+
+        &:hover {
+            color: $cyan;
+        }
+    }
+
+    // Form
+    .form {
+        &__wrapper {
+            padding: 20px;
+        }
+
+        &__shortly {
+            flex-direction: column;
+        }
+
+        &__input {
+            margin-bottom: 30px;
+            margin-right: 0;
+        }
+    }
+
+
+    // Form Result
+    #form-result {
+        padding: 20px;
+
+        .is-8 {
+            border-bottom: 1px solid $gray;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .link {
+
+            &__original,
+            &__short {
+                font-size: 16px;
+            }
+        }
+    }
+
+    // Navigation
+    #mainNavbar {
+        position: absolute;
+        margin-top: 20px;
+        right: 7%;
+        left: 7%;
+        background-color: $darkViolet;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        border-radius: 10px;
+        transition: 0.5s;
+    }
+
+    .navbar-start {
+        display: flex;
+        flex-direction: column;
+
+        &::after {
+            content: '';
+            display: block;
+            border-bottom: 1px solid $grayishViolet;
+            width: 80%;
+            padding-bottom: 20px;
+        }
+    }
+
+    .navbar-end {
+        flex-flow: column wrap;
+        padding-top: 20px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .navbar {
+        &__item {
+            color: #fff;
+            line-height: 3rem;
+
+            &:hover {
+                color: $cyan;
+            }
+        }
+    }
+
+
+    // Header
+    .header {
+
+        .columns {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__heading {
+            order: 2;
+            text-align: center;
+
+            .buttons {
+                justify-content: center;
+            }
+        }
+
+        &__title {
+            font-size: 2.7rem;
+        }
+
+        &__image {
+            order: 1;
+        }
+
+    }
+
+    // Section 
+    .section {
+        &__title {
+            font-size: 1.7rem;
+        }
+
+        &__stats {
+            text-align: center;
+
+            figure {
+                margin: -80px auto 0;
+            }
+        }
+
+        &__blurb {
+            &--divider {
+                height: 80%;
+                top: 0;
+                width: 10px;
+                left: 50%;
+            }
+
+            &--col2,
+            &--col3 {
+                margin-top: 3rem;
+            }
+
+        }
+    }
+
+    .footer {
+        padding: 3rem 1.5rem;
+    }
+
+}
+
+// Reset container width
+@media screen and (max-width: 1023px) {
+
+    // Container
+    .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}

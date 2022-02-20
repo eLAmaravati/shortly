@@ -5,24 +5,15 @@ Author      : Langit Amaravati
 Author URI  : https://www.langitamaravati.com
 Version     : v.1.0.0
 ------------------------------------------------------*/
-/* ----- Table of Content -------------
-1. Reset CSS
-2. Root
-3. Global CSS
-4. Buttons
-5. Navigation
-6. Header
-.. Footer  
-.. Responsive
-----------------------------------*/
 /* ----- Reset CSS ----- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-/* ----- Root ----- */
+/* ----- Variable ----- */
 /* ----- Global CSS ----- */
 body {
   font-family: "Poppins", sans-serif;
@@ -51,20 +42,15 @@ p {
 }
 
 /* ----- Buttons ----- */
-.button:active {
-  outline: none;
-  box-shadow: none;
-  color: #fff;
-}
-
 .button-primary {
   background-color: #2acfcf;
   color: #fff;
   border-color: #2acfcf;
   transition-duration: 0.4s;
-  padding: 25px 40px !important;
+  padding: 15px 40px !important;
   font-size: 20px;
   font-weight: bold;
+  border-radius: 40px;
 }
 .button-primary:hover {
   background-color: #95e9e9;
@@ -82,6 +68,7 @@ p {
   font-size: 20px;
   font-weight: 700;
   border: 2px solid #2acfcf;
+  cursor: pointer;
 }
 .button-submit:hover {
   background-color: #95e9e9;
@@ -99,6 +86,10 @@ p {
   color: #fff;
   border-color: #2acfcf;
   transition-duration: 0.4s;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-left: 30px;
+  font-size: 16px;
 }
 .button-signup:hover {
   background-color: #95e9e9;
@@ -113,6 +104,7 @@ p {
   transition-duration: 0.4s;
   border-radius: 5px;
   padding: 1.5rem 2.5rem;
+  font-size: 16px;
 }
 .button-copy:hover {
   background-color: #95e9e9;
@@ -162,7 +154,7 @@ p {
 }
 
 .form__wrapper {
-  margin-top: -10%;
+  margin-top: -100px;
   background: #3b3054 url(../images/bg-shorten-desktop.svg) no-repeat;
   background-size: cover;
   padding: 50px;
@@ -191,7 +183,7 @@ p {
 #form-result {
   background-color: #fff;
   border-radius: 7px;
-  padding: 1em 2em;
+  padding: 20px 50px;
 }
 #form-result .link__original {
   color: #35323e;
@@ -200,6 +192,31 @@ p {
 #form-result .link__short {
   color: #2acfcf;
   font-size: 18px;
+}
+
+/* ----- Navigation ----- */
+.navbar {
+  align-items: center;
+}
+.navbar__brand {
+  display: flex;
+  align-items: flex-start;
+}
+.navbar__item {
+  font-size: 16px;
+  color: #b3b3b3;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.navbar__item:hover {
+  color: #35323e;
+}
+.navbar__item:active {
+  color: #35323e;
+}
+
+.navbar-start {
+  align-items: center;
 }
 
 /* ----- Section ----- */
@@ -270,7 +287,9 @@ p {
 
 /* ----- Footer ----- */
 .footer {
+  position: relative;
   background-color: #232127;
+  padding: 6rem 6rem 3rem 6rem;
 }
 .footer a {
   color: #b3b3b3;
@@ -284,6 +303,7 @@ p {
 }
 .footer-widget li {
   line-height: 2.5rem;
+  font-size: 16px;
 }
 .footer-widget__social {
   display: flex;
@@ -303,15 +323,26 @@ p {
   color: #fff;
 }
 
+.to-top {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 3rem;
+}
+.to-top a {
+  color: #fff;
+  background-color: rgba(158, 154, 167, 0.5);
+  padding: 20px 15px;
+  opacity: 0.7;
+  border-radius: 3px;
+}
+.to-top a:hover {
+  opacity: 1;
+}
+
 /* ------------------------------ 
 Responsive 
 ------------------------------- */
-@media screen and (max-width: 767.98px) {
-  .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
+@media screen and (max-width: 768px) {
   .button {
     display: flex;
   }
@@ -336,6 +367,9 @@ Responsive
     margin-right: 0;
   }
 
+  #form-result {
+    padding: 20px;
+  }
   #form-result .is-8 {
     border-bottom: 1px solid #b3b3b3;
     overflow: hidden;
@@ -371,6 +405,7 @@ Responsive
   }
 
   .navbar-end {
+    flex-flow: column wrap;
     padding-top: 20px;
     width: 90%;
     margin: 0 auto;
@@ -419,5 +454,15 @@ Responsive
   }
   .section__blurb--col2, .section__blurb--col3 {
     margin-top: 3rem;
+  }
+
+  .footer {
+    padding: 3rem 1.5rem;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }/*# sourceMappingURL=style.css.map */

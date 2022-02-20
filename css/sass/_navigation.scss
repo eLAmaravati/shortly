@@ -1,0 +1,28 @@
+/* ----- Navigation ----- */
+.navbar {
+    align-items: center;
+
+    &__brand {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__item {
+        font-size: 16px;
+        color: $gray;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        &:hover {
+            color: $darkBlue;
+        }
+
+        &:active {
+            color: $darkBlue;
+        }
+    }
+}
+
+.navbar-start {
+    align-items: center;
+}
