@@ -27,8 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
 // shrtcode API
-$('#urlSubmit').on('click', function () {
-
+function shortLink() {
     $.ajax({
         url: 'https://api.shrtco.de/v2/shorten',
         type: 'get',
@@ -37,56 +36,98 @@ $('#urlSubmit').on('click', function () {
             'url': $('#urlInput').val(),
         },
 
-        success: function (hasil) {
-            if (hasil.ok == true) {
-                let shortlink = hasil.result;
+        success: function (data) {
+            if (data.ok == true) {
+                let shortlink = data.result;
                 
-                // $.each(shortlink, function (i, data) {
-                //     $('#form-result').append(`
-                //     <p>`+ data.original_link +`</p>
-                //     <p>`+ data.short_link +`</p>
-                //     <button>Copy</button>
-                //     `)
-                // });
-
-                // $(shortlink, function (data) {
-                //     $('#form-result').html(
-                //         `
-                //         <p>`+ data.original_link +`</p>
-                //         <p>`+ data.short_link +`</p>
-                //         <button>Copy</button>
-                //         `
-                //     )
-                // });
-// End loop
-                
-                // console.log(shortlink);
 
                 $('.form__wrapper').after(`
-                <div class="columns mt-6 box" id="form-result">
+                <div class="columns mt-6 is-vcentered" id="form-result">
                 <div class="column is-8">
-                <p class="link__original">`+ shortlink.original_link +`</p>
+                <a href="`+ shortlink.original_link + `" class="link__original" target="_blank" rel="nofollow noreferrer">` + shortlink.original_link + `</a>
                 </div>
                 <div class="column is-2">
-                <p class="link__short">`+ shortlink.short_link +`</p>
+                <a href"`+ shortlink.short_link + `" class="link__short" target="_blank" rel="nofollow noreferrer">` + shortlink.short_link + `</a>
                 </div>
                 <div class="column is-2">
-                <a class="button button-signup" role="button">Copy</a>
+                <a class="button button-copy" role="button">Copy</a>
                 </div>
                 </div>
                 `)
-            }
-            else {
 
-                alert('url salah');
             }
+
+            else {
+                shortLink(); 
+           }
         }
         // End Success
     });
     // End Ajax
-    
+}
+
+
+
+
+$('#urlSubmit').on('click', function () {
+    shortLink();    
 });
 
-// $('#urlInput').on('click', function () {
-//     alert('hello'); 
-// });
+
+
+// Copied URL
+
+
+
+
+$('.section__form').on('click', '.button-copy', function () {
+    const copyText = $("link__shortlink");
+
+    // copyText.select();
+    // copyText.setSelectionRange(0, 99999);
+
+    // navigator.clipboard.writeText(copyText.value);
+
+    // alert("Copied the text: " + copyText.value);
+
+
+    // function copyToClipboard(element) {
+    //     var $temp = $("<input>");
+    //     $("body").append($temp);
+    //     $temp.val($(element).text()).select();
+    //     document.execCommand("copy");
+    //     $temp.remove();
+    //   }
+
+    alert('url salah');
+});
+
+
+  
+// function copyURL() {
+//     const copyText = document.getElementsByClassName("link__shortlink");
+
+//     copyText.select();
+//     copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+//     navigator.clipboard.writeText(copyText.value);
+
+//     alert("Copied the text: " + copyText.value);
+// }
+
+// function copyToClipboard(element) {
+//     var $temp = $("<input>");
+//     $("body").append($temp);
+//     $temp.val($(element).text()).select();
+//     document.execCommand("copy");
+//     $temp.remove();
+//   }
+  
+let url = document.location.href
+
+navigator.clipboard.writeText(url).then(function() {
+    console.log('Copied!');
+}, function() {
+    console.log('Copy error')
+});
+

@@ -78,12 +78,21 @@ p {
     background-color: $cyan;
     color: #fff;
     border-color: $cyan;
+    transition-duration: 0.4s;
 }
 
 @mixin btnHover {
     background-color: $cyanHover;
     border-color: $cyanHover;
     color: #fff;
+}
+
+.button {
+    &:active {
+        outline: none;
+        box-shadow: none;
+        color: #fff;
+    }
 }
 
 .button-primary {
@@ -99,9 +108,11 @@ p {
 
 .button-submit {
     @include btn;
-    border-radius: 5px;
+    height: 100%;
+    border-radius: 7px;
     font-size: 20px;
     font-weight: 700;
+    border: 2px solid $cyan;
 
     &:hover {
         @include btnHover;
@@ -121,22 +132,50 @@ p {
     }
 }
 
-
-/* ----- Navigation ----- */
-.navbar-item {
-    font-size: 16px;
-    color: $gray;
-    background-color: #fff !important;
+.button-copy {
+    @include btn;
+    border-radius: 5px;
+    padding: 1.5rem 2.5rem;
 
     &:hover {
-        color: $darkBlue !important;
+        @include btnHover;
     }
+}
+
+
+/* ----- Navigation ----- */
+.navbar {
+    align-items: center;
+
+    &__brand {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__item {
+        font-size: 16px;
+        color: $gray;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        &:hover {
+            color: $darkBlue;
+        }
+
+        &:active {
+            color: $darkBlue;
+        }
+    }
+}
+
+.navbar-start {
+    align-items: center;
 }
 
 
 /* ----- Header ----- */
 .header {
-    // background-image: linear-gradient(to bottom, #fff 87%, $ligthGray 10%);
+    margin-bottom: 150px;
 
     &__heading {
         display: flex;
@@ -156,34 +195,56 @@ p {
 // Form
 .form {
     &__wrapper {
-        margin-top: 50px;
+        margin-top: -10%;
         background: $darkViolet url(../images/bg-shorten-desktop.svg) no-repeat;
         background-size: cover;
         padding: 50px;
         border-radius: 12px;
-        // position: relative;
+    }
+
+    &__shortly {
+        display: flex;
+        justify-content: space-between;
     }
 
     &__input {
+        flex: 6;
+        padding: 20px;
         font-size: 18px;
+        border-radius: 7px;
+        border: 1px solid #fff;
+        margin-right: 30px;
+
+        &:focus {
+            outline: none;
+            box-shadow: 2px 2px 10px $cyanHover;
+        }
+    }
+
+    &__button {
+        flex: 1;
     }
 }
 
 #form-result {
-    position: relative;
+    // position: relative;
+    background-color: #fff;
+    border-radius: 7px;
+    padding: 1em 2em;
 
     .link {
         &__original {
             color: $darkBlue;
+            font-size: 18px;
         }
 
         &__short {
             color: $cyan;
+            font-size: 18px;
         }
     }
 
 }
-
 
 
 /* ----- Section ----- */
@@ -197,8 +258,10 @@ p {
         text-align: center;
     }
 
+    // Section Form
+
     &__form {
-        background-image: linear-gradient(to bottom, #fff 50%, $ligthGray 50%);
+        background-color: $ligthGray;
     }
 
     // Section Stats
@@ -210,7 +273,7 @@ p {
         }
 
         figure {
-            margin-top: -70px;
+            margin-top: -75px;
             background-color: $darkViolet;
             border-radius: 50%;
             display: flex;
@@ -330,4 +393,157 @@ Responsive
         padding-left: 2rem;
         padding-right: 2rem;
     }
+
+    // Button 
+    .button {
+        display: flex;
+    }
+
+    .button-text {
+        background-color: transparent;
+        color: #fff;
+        margin-bottom: 20px;
+
+        &:hover {
+            color: $cyan;
+        }
+    }
+
+    // Form
+    .form {
+        &__wrapper {
+            padding: 20px;
+        }
+
+        &__shortly {
+            flex-direction: column;
+        }
+
+        &__input {
+            margin-bottom: 30px;
+            margin-right: 0;
+        }
+    }
+
+
+    // Form Result
+    #form-result {
+
+        .is-8 {
+            border-bottom: 1px solid $gray;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .link {
+
+            &__original,
+            &__short {
+                font-size: 16px;
+            }
+        }
+    }
+
+    // Navigation
+    #mainNavbar {
+        position: absolute;
+        margin-top: 20px;
+        right: 7%;
+        left: 7%;
+        background-color: $darkViolet;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        border-radius: 10px;
+        transition: 0.5s;
+    }
+
+    .navbar-start {
+        display: flex;
+        flex-direction: column;
+
+        &::after {
+            content: '';
+            display: block;
+            border-bottom: 1px solid $grayishViolet;
+            width: 80%;
+            padding-bottom: 20px;
+        }
+    }
+
+    .navbar-end {
+        padding-top: 20px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .navbar {
+        &__item {
+            color: #fff;
+            line-height: 3rem;
+
+            &:hover {
+                color: $cyan;
+            }
+        }
+    }
+
+
+    // Header
+    .header {
+
+        .columns {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__heading {
+            order: 2;
+            text-align: center;
+
+            .buttons {
+                justify-content: center;
+            }
+        }
+
+        &__title {
+            font-size: 2.7rem;
+        }
+
+        &__image {
+            order: 1;
+        }
+
+    }
+
+    // Section 
+    .section {
+        &__title {
+            font-size: 1.7rem;
+        }
+
+        &__stats {
+            text-align: center;
+
+            figure {
+                margin: -80px auto 0;
+            }
+        }
+
+        &__blurb {
+            &--divider {
+                height: 80%;
+                top: 0;
+                width: 10px;
+                left: 50%;
+            }
+
+            &--col2,
+            &--col3 {
+                margin-top: 3rem;
+            }
+
+        }
+    }
+
 }

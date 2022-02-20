@@ -53,15 +53,13 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
+- SaSS
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
 - [ShrtCode](https://shrtco.de/docs/) - Shortcode API
-- [Bulma]https://bulma.io/) - CSS framework
+- [Bulma](https://bulma.io/) - CSS framework
 - jQuery AJAX
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
